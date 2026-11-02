@@ -1,0 +1,18 @@
+# dbuild configuration file
+# Full reference: https://github.com/daemonless/dbuild
+
+icon: ':material-cog-sync-outline:'
+build:
+  architectures:
+    - amd64
+  variants:
+    - tag: latest
+      containerfile: Containerfile
+      default: true
+
+# Needs PostgreSQL and Redis (tested in daemonless/weavestream): run the image's own CMD
+# and verify initialization, permissions, and environment validation.
+cit:
+  mode: command
+  expect_exit: 1
+  expect_output: "DATABASE_URL: Invalid input"

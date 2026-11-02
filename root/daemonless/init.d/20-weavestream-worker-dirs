@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+mkdir -p /var/lib/weavestream/files /var/lib/weavestream/backup
+
+chown -R "${DAEMONLESS_USER:-bsd}:${DAEMONLESS_GROUP:-bsd}" /var/lib/weavestream/files /var/lib/weavestream/backup

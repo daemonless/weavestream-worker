@@ -1,0 +1,55 @@
+name: weavestream-worker
+
+x-daemonless:
+  title: "Weavestream Worker"
+  icon: ":material-cog-sync-outline:"
+  category: "Productivity"
+  description: "Background queue worker and scheduled task runner for Weavestream, an open-source self-hosted IT documentation and asset management platform."
+  upstream_url: "https://github.com/Weavestream/Weavestream"
+  web_url: "https://weavestream.io"
+  freshports_url: ""
+  user: "bsd"
+  mlock: false
+  upstream_binary: false
+  appjail:
+    director:
+      options:
+        - alias:
+        - ip4_inherit:
+    depends_on:
+      - name: weavestream-postgres
+        image: ghcr.io/daemonless/postgres:16
+        template: postgres-template.conf
+      - name: weavestream-redis
+        image: ghcr.io/daemonless/redis:latest
+  community: "Discord:https://discord.gg/weavestream"
+
+  docs:
+    env:
+      PUID: "User ID for the worker process"
+      PGID: "Group ID for the worker process"
+      TZ: "Timezone for the container"
+      DATABASE_URL: "PostgreSQL connection string (e.g. postgresql://user:pass@host:5432/db)"
+      REDIS_URL: "Redis or Valkey connection string (e.g. redis://host:6379/0)"
+      FILE_STORAGE_DIR: "Uploaded attachments directory (default: /var/lib/weavestream/files)"
+      BACKUP_STORAGE_DIR: "Scheduled database backup directory (default: /var/lib/weavestream/backup)"
+    volumes:
+      /var/lib/weavestream/files: "Uploaded attachments and documents (shared with API)"
+      /var/lib/weavestream/backup: "Backup storage directory (worker writes scheduled database exports)"
+
+services:
+  weavestream-worker:
+    image: ghcr.io/daemonless/weavestream-worker:latest
+    container_name: weavestream-worker
+    restart: always
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - DATABASE_URL=postgresql://weavestream:REPLACEME@postgres:5432/weavestream
+      - REDIS_URL=redis://:REPLACEME@redis:6379/0
+
+    volumes:
+      - ./data/files:/var/lib/weavestream/files
+      - ./data/backup:/var/lib/weavestream/backup
