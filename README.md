@@ -40,6 +40,15 @@ services:
       - TZ=UTC  # Timezone for the container
       - DATABASE_URL=postgresql://weavestream:REPLACEME@postgres:5432/weavestream  # PostgreSQL connection string (e.g. postgresql://user:pass@host:5432/db)
       - REDIS_URL=redis://:REPLACEME@redis:6379/0  # Redis or Valkey connection string (e.g. redis://host:6379/0)
+      - APP_URL=http://localhost:3000  # Public origin of the web UI (default: http://localhost:3000)
+      - API_URL=http://localhost:3000/api  # Public origin of the API (default: http://localhost:3000/api)
+      - JWT_SIGNING_KEY=REPLACEME_32_BYTES_BASE64  # 32-byte base64 secret, the same in api and worker
+      - MFA_ENCRYPTION_KEY=REPLACEME_32_BYTES_BASE64  # 32-byte base64 secret, the same in api and worker
+      - PASSWORD_ENCRYPTION_KEY=REPLACEME_32_BYTES_BASE64  # 32-byte base64 secret, the same in api and worker
+      - INTEGRATION_SECRET_KEY=REPLACEME_32_BYTES_BASE64  # 32-byte base64 secret, the same in api and worker
+      - SMTP_SECRET_KEY=REPLACEME_32_BYTES_BASE64  # 32-byte base64 secret, the same in api and worker
+      - COOKIE_SIGNING_KEY=REPLACEME_32_BYTES_BASE64  # 32-byte base64 secret, the same in api, worker and web
+      - CSRF_SIGNING_KEY=REPLACEME_32_BYTES_BASE64  # 32-byte base64 secret, the same in api and worker
       # - FILE_STORAGE_DIR=  # Uploaded attachments directory (default: /var/lib/weavestream/files)
       # - BACKUP_STORAGE_DIR=  # Scheduled database backup directory (default: /var/lib/weavestream/backup)
     volumes:
@@ -63,6 +72,15 @@ PGID=1000
 TZ=UTC
 DATABASE_URL=postgresql://weavestream:REPLACEME@postgres:5432/weavestream
 REDIS_URL=redis://:REPLACEME@redis:6379/0
+APP_URL=http://localhost:3000
+API_URL=http://localhost:3000/api
+JWT_SIGNING_KEY=REPLACEME_32_BYTES_BASE64
+MFA_ENCRYPTION_KEY=REPLACEME_32_BYTES_BASE64
+PASSWORD_ENCRYPTION_KEY=REPLACEME_32_BYTES_BASE64
+INTEGRATION_SECRET_KEY=REPLACEME_32_BYTES_BASE64
+SMTP_SECRET_KEY=REPLACEME_32_BYTES_BASE64
+COOKIE_SIGNING_KEY=REPLACEME_32_BYTES_BASE64
+CSRF_SIGNING_KEY=REPLACEME_32_BYTES_BASE64
 ```
 
 **appjail-director.yml**:
@@ -86,6 +104,15 @@ services:
         - TZ: !ENV '${TZ}'
         - DATABASE_URL: !ENV '${DATABASE_URL}'
         - REDIS_URL: !ENV '${REDIS_URL}'
+        - APP_URL: !ENV '${APP_URL}'
+        - API_URL: !ENV '${API_URL}'
+        - JWT_SIGNING_KEY: !ENV '${JWT_SIGNING_KEY}'
+        - MFA_ENCRYPTION_KEY: !ENV '${MFA_ENCRYPTION_KEY}'
+        - PASSWORD_ENCRYPTION_KEY: !ENV '${PASSWORD_ENCRYPTION_KEY}'
+        - INTEGRATION_SECRET_KEY: !ENV '${INTEGRATION_SECRET_KEY}'
+        - SMTP_SECRET_KEY: !ENV '${SMTP_SECRET_KEY}'
+        - COOKIE_SIGNING_KEY: !ENV '${COOKIE_SIGNING_KEY}'
+        - CSRF_SIGNING_KEY: !ENV '${CSRF_SIGNING_KEY}'
     volumes:
       - weavestream-worker_data_files: /var/lib/weavestream/files
       - weavestream-worker_data_backup: /var/lib/weavestream/backup
@@ -140,6 +167,15 @@ services:
       - TZ=UTC
       - DATABASE_URL=postgresql://weavestream:REPLACEME@postgres:5432/weavestream
       - REDIS_URL=redis://:REPLACEME@redis:6379/0
+      - APP_URL=http://localhost:3000
+      - API_URL=http://localhost:3000/api
+      - JWT_SIGNING_KEY=REPLACEME_32_BYTES_BASE64
+      - MFA_ENCRYPTION_KEY=REPLACEME_32_BYTES_BASE64
+      - PASSWORD_ENCRYPTION_KEY=REPLACEME_32_BYTES_BASE64
+      - INTEGRATION_SECRET_KEY=REPLACEME_32_BYTES_BASE64
+      - SMTP_SECRET_KEY=REPLACEME_32_BYTES_BASE64
+      - COOKIE_SIGNING_KEY=REPLACEME_32_BYTES_BASE64
+      - CSRF_SIGNING_KEY=REPLACEME_32_BYTES_BASE64
     volumes:
       - "/containers/weavestream-worker/data/files:/var/lib/weavestream/files"
       - "/containers/weavestream-worker/data/backup:/var/lib/weavestream/backup"
@@ -158,6 +194,15 @@ Save as `bastille-compose.yml`, then run `bastille up`.
 | `TZ` | `UTC` | Timezone for the container |
 | `DATABASE_URL` | `postgresql://weavestream:REPLACEME@postgres:5432/weavestream` | PostgreSQL connection string (e.g. postgresql://user:pass@host:5432/db) |
 | `REDIS_URL` | `redis://:REPLACEME@redis:6379/0` | Redis or Valkey connection string (e.g. redis://host:6379/0) |
+| `APP_URL` | `http://localhost:3000` | Public origin of the web UI (default: http://localhost:3000) |
+| `API_URL` | `http://localhost:3000/api` | Public origin of the API (default: http://localhost:3000/api) |
+| `JWT_SIGNING_KEY` | `REPLACEME_32_BYTES_BASE64` | 32-byte base64 secret, the same in api and worker |
+| `MFA_ENCRYPTION_KEY` | `REPLACEME_32_BYTES_BASE64` | 32-byte base64 secret, the same in api and worker |
+| `PASSWORD_ENCRYPTION_KEY` | `REPLACEME_32_BYTES_BASE64` | 32-byte base64 secret, the same in api and worker |
+| `INTEGRATION_SECRET_KEY` | `REPLACEME_32_BYTES_BASE64` | 32-byte base64 secret, the same in api and worker |
+| `SMTP_SECRET_KEY` | `REPLACEME_32_BYTES_BASE64` | 32-byte base64 secret, the same in api and worker |
+| `COOKIE_SIGNING_KEY` | `REPLACEME_32_BYTES_BASE64` | 32-byte base64 secret, the same in api, worker and web |
+| `CSRF_SIGNING_KEY` | `REPLACEME_32_BYTES_BASE64` | 32-byte base64 secret, the same in api and worker |
 | `FILE_STORAGE_DIR` | `` | Uploaded attachments directory (default: /var/lib/weavestream/files) |
 | `BACKUP_STORAGE_DIR` | `` | Scheduled database backup directory (default: /var/lib/weavestream/backup) |
 

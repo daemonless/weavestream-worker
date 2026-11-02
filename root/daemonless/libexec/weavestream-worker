@@ -1,16 +1,8 @@
 #!/bin/sh
 set -e
 
-# Default auto-generated keys if not set
 export APP_URL="${APP_URL:-http://localhost:3000}"
 export API_URL="${API_URL:-http://localhost:3000/api}"
-export JWT_SIGNING_KEY="${JWT_SIGNING_KEY:-$(openssl rand -base64 32)}"
-export MFA_ENCRYPTION_KEY="${MFA_ENCRYPTION_KEY:-$(openssl rand -base64 32)}"
-export PASSWORD_ENCRYPTION_KEY="${PASSWORD_ENCRYPTION_KEY:-$(openssl rand -base64 32)}"
-export INTEGRATION_SECRET_KEY="${INTEGRATION_SECRET_KEY:-$(openssl rand -base64 32)}"
-export SMTP_SECRET_KEY="${SMTP_SECRET_KEY:-$(openssl rand -base64 32)}"
-export COOKIE_SIGNING_KEY="${COOKIE_SIGNING_KEY:-$(openssl rand -base64 32)}"
-export CSRF_SIGNING_KEY="${CSRF_SIGNING_KEY:-$(openssl rand -base64 32)}"
 
 export PRISMA_SCHEMA_ENGINE_BINARY="${PRISMA_SCHEMA_ENGINE_BINARY:-/usr/local/libexec/prisma-engines/schema-engine}"
 export PRISMA_QUERY_ENGINE_LIBRARY="${PRISMA_QUERY_ENGINE_LIBRARY:-/usr/local/libexec/prisma-engines/libquery_engine.node}"

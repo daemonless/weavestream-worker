@@ -36,8 +36,11 @@ RUN pkg update && pkg install -y ${PACKAGES} && \
 
 WORKDIR /repo
 
+# Upstream lists every desktop OS under supportedArchitectures, so pnpm fetches
+# all of their native binaries: only this platform's are wanted.
 RUN corepack enable && \
-    sed -i '' 's/  os:/  os:\n    - freebsd/' pnpm-workspace.yaml && \
+    sed -i '' '/^supportedArchitectures:/,/^allowBuilds:/{/^allowBuilds:/!d;}' pnpm-workspace.yaml && \
+    printf 'supportedArchitectures:\n  os:\n    - freebsd\n  cpu:\n    - %s\n' "$([ "${FREEBSD_ARCH}" = aarch64 ] && echo arm64 || echo x64)" >> pnpm-workspace.yaml && \
     sed -i '' 's/argon2: true/argon2: true\n  esbuild: true/' pnpm-workspace.yaml && \
     sed -i '' 's/"@prisma\/client": "\^5.22.0"/"@prisma\/client": "6.19.0"/' packages/db/package.json && \
     sed -i '' 's/"prisma": "\^5.22.0"/"prisma": "6.19.0"/' packages/db/package.json && \
@@ -85,26 +88,25 @@ ENV NODE_ENV=production \
 
 WORKDIR /app
 
-COPY --from=builder /app/version /app/version
-COPY --from=builder /repo/node_modules ./node_modules
-COPY --from=builder /repo/packages/db/node_modules ./packages/db/node_modules
-COPY --from=builder /repo/packages/shared/node_modules ./packages/shared/node_modules
-COPY --from=builder /repo/packages/shared/dist ./packages/shared/dist
-COPY --from=builder /repo/packages/shared/package.json ./packages/shared/package.json
-COPY --from=builder /repo/packages/db/dist ./packages/db/dist
-COPY --from=builder /repo/packages/db/package.json ./packages/db/package.json
-COPY --from=builder /repo/packages/db/prisma ./packages/db/prisma
-COPY --from=builder /repo/apps/api/dist ./apps/api/dist
-COPY --from=builder /repo/apps/api/package.json ./apps/api/package.json
-COPY --from=builder /repo/apps/api/node_modules ./apps/api/node_modules
-COPY --from=builder /repo/apps/worker/dist ./apps/worker/dist
-COPY --from=builder /repo/apps/worker/package.json ./apps/worker/package.json
-COPY --from=builder /repo/apps/worker/node_modules ./apps/worker/node_modules
+COPY --from=builder --chown=bsd:bsd /app/version /app/version
+COPY --from=builder --chown=bsd:bsd /repo/node_modules ./node_modules
+COPY --from=builder --chown=bsd:bsd /repo/packages/db/node_modules ./packages/db/node_modules
+COPY --from=builder --chown=bsd:bsd /repo/packages/shared/node_modules ./packages/shared/node_modules
+COPY --from=builder --chown=bsd:bsd /repo/packages/shared/dist ./packages/shared/dist
+COPY --from=builder --chown=bsd:bsd /repo/packages/shared/package.json ./packages/shared/package.json
+COPY --from=builder --chown=bsd:bsd /repo/packages/db/dist ./packages/db/dist
+COPY --from=builder --chown=bsd:bsd /repo/packages/db/package.json ./packages/db/package.json
+COPY --from=builder --chown=bsd:bsd /repo/packages/db/prisma ./packages/db/prisma
+COPY --from=builder --chown=bsd:bsd /repo/apps/api/dist ./apps/api/dist
+COPY --from=builder --chown=bsd:bsd /repo/apps/api/package.json ./apps/api/package.json
+COPY --from=builder --chown=bsd:bsd /repo/apps/api/node_modules ./apps/api/node_modules
+COPY --from=builder --chown=bsd:bsd /repo/apps/worker/dist ./apps/worker/dist
+COPY --from=builder --chown=bsd:bsd /repo/apps/worker/package.json ./apps/worker/package.json
+COPY --from=builder --chown=bsd:bsd /repo/apps/worker/node_modules ./apps/worker/node_modules
 
 COPY root/ /
 
-RUN chmod +x /daemonless/libexec/* /daemonless/init.d/* 2>/dev/null || true && \
-    chown -R bsd:bsd /app
+RUN chmod +x /daemonless/libexec/* /daemonless/init.d/* 2>/dev/null || true
 
 WORKDIR /app/apps/worker
 
