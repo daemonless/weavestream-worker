@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-02T20:44:18Z",
+  "generated": "2026-11-02T21:34:29Z",
   "image": "weavestream-worker",
   "tags": {
     "latest": {
       "app_version": "1.11.1",
       "arch": "amd64",
-      "generated": "2026-11-02T20:41:14Z",
+      "generated": "2026-11-02T21:33:15Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1448,82 +1448,12 @@
             "version": "1.1.0"
           },
           {
-            "name": "@img/sharp-darwin-arm64",
-            "purl": "",
-            "version": "0.35.5"
-          },
-          {
-            "name": "@img/sharp-darwin-x64",
-            "purl": "",
-            "version": "0.35.5"
-          },
-          {
             "name": "@img/sharp-freebsd-wasm32",
             "purl": "",
             "version": "0.35.5"
           },
           {
-            "name": "@img/sharp-libvips-darwin-arm64",
-            "purl": "",
-            "version": "1.3.4"
-          },
-          {
-            "name": "@img/sharp-libvips-darwin-x64",
-            "purl": "",
-            "version": "1.3.4"
-          },
-          {
-            "name": "@img/sharp-libvips-linux-arm64",
-            "purl": "",
-            "version": "1.3.4"
-          },
-          {
-            "name": "@img/sharp-libvips-linux-x64",
-            "purl": "",
-            "version": "1.3.4"
-          },
-          {
-            "name": "@img/sharp-libvips-linuxmusl-arm64",
-            "purl": "",
-            "version": "1.3.4"
-          },
-          {
-            "name": "@img/sharp-libvips-linuxmusl-x64",
-            "purl": "",
-            "version": "1.3.4"
-          },
-          {
-            "name": "@img/sharp-linux-arm64",
-            "purl": "",
-            "version": "0.35.5"
-          },
-          {
-            "name": "@img/sharp-linux-x64",
-            "purl": "",
-            "version": "0.35.5"
-          },
-          {
-            "name": "@img/sharp-linuxmusl-arm64",
-            "purl": "",
-            "version": "0.35.5"
-          },
-          {
-            "name": "@img/sharp-linuxmusl-x64",
-            "purl": "",
-            "version": "0.35.5"
-          },
-          {
             "name": "@img/sharp-wasm32",
-            "purl": "",
-            "version": "0.35.5"
-          },
-          {
-            "name": "@img/sharp-win32-arm64",
-            "purl": "",
-            "version": "0.35.5"
-          },
-          {
-            "name": "@img/sharp-win32-x64",
             "purl": "",
             "version": "0.35.5"
           },
@@ -1868,31 +1798,6 @@
             "version": "1.32.1"
           },
           {
-            "name": "@msgpackr-extract/msgpackr-extract-darwin-arm64",
-            "purl": "",
-            "version": "3.0.4"
-          },
-          {
-            "name": "@msgpackr-extract/msgpackr-extract-darwin-x64",
-            "purl": "",
-            "version": "3.0.4"
-          },
-          {
-            "name": "@msgpackr-extract/msgpackr-extract-linux-arm64",
-            "purl": "",
-            "version": "3.0.4"
-          },
-          {
-            "name": "@msgpackr-extract/msgpackr-extract-linux-x64",
-            "purl": "",
-            "version": "3.0.4"
-          },
-          {
-            "name": "@msgpackr-extract/msgpackr-extract-win32-x64",
-            "purl": "",
-            "version": "3.0.4"
-          },
-          {
             "name": "@my-scope/package-a",
             "purl": "",
             "version": "0.0.0"
@@ -1944,46 +1849,6 @@
           },
           {
             "name": "@next/eslint-plugin-next",
-            "purl": "",
-            "version": "16.4.3"
-          },
-          {
-            "name": "@next/swc-darwin-arm64",
-            "purl": "",
-            "version": "16.4.3"
-          },
-          {
-            "name": "@next/swc-darwin-x64",
-            "purl": "",
-            "version": "16.4.3"
-          },
-          {
-            "name": "@next/swc-linux-arm64-gnu",
-            "purl": "",
-            "version": "16.4.3"
-          },
-          {
-            "name": "@next/swc-linux-arm64-musl",
-            "purl": "",
-            "version": "16.4.3"
-          },
-          {
-            "name": "@next/swc-linux-x64-gnu",
-            "purl": "",
-            "version": "16.4.3"
-          },
-          {
-            "name": "@next/swc-linux-x64-musl",
-            "purl": "",
-            "version": "16.4.3"
-          },
-          {
-            "name": "@next/swc-win32-arm64-msvc",
-            "purl": "",
-            "version": "16.4.3"
-          },
-          {
-            "name": "@next/swc-win32-x64-msvc",
             "purl": "",
             "version": "16.4.3"
           },
@@ -2043,47 +1908,7 @@
             "version": "12.0.1"
           },
           {
-            "name": "@oxc-parser/binding-darwin-arm64",
-            "purl": "",
-            "version": "0.155.0"
-          },
-          {
-            "name": "@oxc-parser/binding-darwin-x64",
-            "purl": "",
-            "version": "0.155.0"
-          },
-          {
             "name": "@oxc-parser/binding-freebsd-x64",
-            "purl": "",
-            "version": "0.155.0"
-          },
-          {
-            "name": "@oxc-parser/binding-linux-arm64-gnu",
-            "purl": "",
-            "version": "0.155.0"
-          },
-          {
-            "name": "@oxc-parser/binding-linux-arm64-musl",
-            "purl": "",
-            "version": "0.155.0"
-          },
-          {
-            "name": "@oxc-parser/binding-linux-x64-gnu",
-            "purl": "",
-            "version": "0.155.0"
-          },
-          {
-            "name": "@oxc-parser/binding-linux-x64-musl",
-            "purl": "",
-            "version": "0.155.0"
-          },
-          {
-            "name": "@oxc-parser/binding-win32-arm64-msvc",
-            "purl": "",
-            "version": "0.155.0"
-          },
-          {
-            "name": "@oxc-parser/binding-win32-x64-msvc",
             "purl": "",
             "version": "0.155.0"
           },
@@ -2093,47 +1918,7 @@
             "version": "0.155.0"
           },
           {
-            "name": "@oxc-resolver/binding-darwin-arm64",
-            "purl": "",
-            "version": "11.24.2"
-          },
-          {
-            "name": "@oxc-resolver/binding-darwin-x64",
-            "purl": "",
-            "version": "11.24.2"
-          },
-          {
             "name": "@oxc-resolver/binding-freebsd-x64",
-            "purl": "",
-            "version": "11.24.2"
-          },
-          {
-            "name": "@oxc-resolver/binding-linux-arm64-gnu",
-            "purl": "",
-            "version": "11.24.2"
-          },
-          {
-            "name": "@oxc-resolver/binding-linux-arm64-musl",
-            "purl": "",
-            "version": "11.24.2"
-          },
-          {
-            "name": "@oxc-resolver/binding-linux-x64-gnu",
-            "purl": "",
-            "version": "11.24.2"
-          },
-          {
-            "name": "@oxc-resolver/binding-linux-x64-musl",
-            "purl": "",
-            "version": "11.24.2"
-          },
-          {
-            "name": "@oxc-resolver/binding-win32-arm64-msvc",
-            "purl": "",
-            "version": "11.24.2"
-          },
-          {
-            "name": "@oxc-resolver/binding-win32-x64-msvc",
             "purl": "",
             "version": "11.24.2"
           },
@@ -2148,47 +1933,7 @@
             "version": "2.6.0"
           },
           {
-            "name": "@parcel/watcher-darwin-arm64",
-            "purl": "",
-            "version": "2.6.0"
-          },
-          {
-            "name": "@parcel/watcher-darwin-x64",
-            "purl": "",
-            "version": "2.6.0"
-          },
-          {
             "name": "@parcel/watcher-freebsd-x64",
-            "purl": "",
-            "version": "2.6.0"
-          },
-          {
-            "name": "@parcel/watcher-linux-arm64-glibc",
-            "purl": "",
-            "version": "2.6.0"
-          },
-          {
-            "name": "@parcel/watcher-linux-arm64-musl",
-            "purl": "",
-            "version": "2.6.0"
-          },
-          {
-            "name": "@parcel/watcher-linux-x64-glibc",
-            "purl": "",
-            "version": "2.6.0"
-          },
-          {
-            "name": "@parcel/watcher-linux-x64-musl",
-            "purl": "",
-            "version": "2.6.0"
-          },
-          {
-            "name": "@parcel/watcher-win32-arm64",
-            "purl": "",
-            "version": "2.6.0"
-          },
-          {
-            "name": "@parcel/watcher-win32-x64",
             "purl": "",
             "version": "2.6.0"
           },
@@ -2338,47 +2083,7 @@
             "version": "1.1.1"
           },
           {
-            "name": "@rolldown/binding-darwin-arm64",
-            "purl": "",
-            "version": "1.2.15"
-          },
-          {
-            "name": "@rolldown/binding-darwin-x64",
-            "purl": "",
-            "version": "1.2.15"
-          },
-          {
             "name": "@rolldown/binding-freebsd-x64",
-            "purl": "",
-            "version": "1.2.15"
-          },
-          {
-            "name": "@rolldown/binding-linux-arm64-gnu",
-            "purl": "",
-            "version": "1.2.15"
-          },
-          {
-            "name": "@rolldown/binding-linux-arm64-musl",
-            "purl": "",
-            "version": "1.2.15"
-          },
-          {
-            "name": "@rolldown/binding-linux-x64-gnu",
-            "purl": "",
-            "version": "1.2.15"
-          },
-          {
-            "name": "@rolldown/binding-linux-x64-musl",
-            "purl": "",
-            "version": "1.2.15"
-          },
-          {
-            "name": "@rolldown/binding-win32-arm64-msvc",
-            "purl": "",
-            "version": "1.2.15"
-          },
-          {
-            "name": "@rolldown/binding-win32-x64-msvc",
             "purl": "",
             "version": "1.2.15"
           },
@@ -2413,57 +2118,7 @@
             "version": "5.4.0"
           },
           {
-            "name": "@rollup/rollup-darwin-arm64",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-darwin-x64",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-freebsd-arm64",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
             "name": "@rollup/rollup-freebsd-x64",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-linux-arm64-gnu",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-linux-arm64-musl",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-linux-x64-gnu",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-linux-x64-musl",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-win32-arm64-msvc",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-win32-x64-gnu",
-            "purl": "",
-            "version": "4.62.2"
-          },
-          {
-            "name": "@rollup/rollup-win32-x64-msvc",
             "purl": "",
             "version": "4.62.2"
           },
@@ -3313,47 +2968,7 @@
             "version": "1.3.3"
           },
           {
-            "name": "@unrs/resolver-binding-darwin-arm64",
-            "purl": "",
-            "version": "1.12.2"
-          },
-          {
-            "name": "@unrs/resolver-binding-darwin-x64",
-            "purl": "",
-            "version": "1.12.2"
-          },
-          {
             "name": "@unrs/resolver-binding-freebsd-x64",
-            "purl": "",
-            "version": "1.12.2"
-          },
-          {
-            "name": "@unrs/resolver-binding-linux-arm64-gnu",
-            "purl": "",
-            "version": "1.12.2"
-          },
-          {
-            "name": "@unrs/resolver-binding-linux-arm64-musl",
-            "purl": "",
-            "version": "1.12.2"
-          },
-          {
-            "name": "@unrs/resolver-binding-linux-x64-gnu",
-            "purl": "",
-            "version": "1.12.2"
-          },
-          {
-            "name": "@unrs/resolver-binding-linux-x64-musl",
-            "purl": "",
-            "version": "1.12.2"
-          },
-          {
-            "name": "@unrs/resolver-binding-win32-arm64-msvc",
-            "purl": "",
-            "version": "1.12.2"
-          },
-          {
-            "name": "@unrs/resolver-binding-win32-x64-msvc",
             "purl": "",
             "version": "1.12.2"
           },
@@ -5093,11 +4708,6 @@
             "version": "1.1.0"
           },
           {
-            "name": "fsevents",
-            "purl": "",
-            "version": "2.3.3"
-          },
-          {
             "name": "function-bind",
             "purl": "",
             "version": "1.1.2"
@@ -5973,47 +5583,7 @@
             "version": "1.33.0"
           },
           {
-            "name": "lightningcss-darwin-arm64",
-            "purl": "",
-            "version": "1.33.0"
-          },
-          {
-            "name": "lightningcss-darwin-x64",
-            "purl": "",
-            "version": "1.33.0"
-          },
-          {
             "name": "lightningcss-freebsd-x64",
-            "purl": "",
-            "version": "1.33.0"
-          },
-          {
-            "name": "lightningcss-linux-arm64-gnu",
-            "purl": "",
-            "version": "1.33.0"
-          },
-          {
-            "name": "lightningcss-linux-arm64-musl",
-            "purl": "",
-            "version": "1.33.0"
-          },
-          {
-            "name": "lightningcss-linux-x64-gnu",
-            "purl": "",
-            "version": "1.33.0"
-          },
-          {
-            "name": "lightningcss-linux-x64-musl",
-            "purl": "",
-            "version": "1.33.0"
-          },
-          {
-            "name": "lightningcss-win32-arm64-msvc",
-            "purl": "",
-            "version": "1.33.0"
-          },
-          {
-            "name": "lightningcss-win32-x64-msvc",
             "purl": "",
             "version": "1.33.0"
           },
@@ -8449,12 +8019,12 @@
         "freebsd": 68,
         "go": 0,
         "java": 0,
-        "node": 1588,
+        "node": 1502,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 1656
+        "total": 1570
       }
     }
   }
