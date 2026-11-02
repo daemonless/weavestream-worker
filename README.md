@@ -52,8 +52,8 @@ services:
       # - FILE_STORAGE_DIR=  # Uploaded attachments directory (default: /var/lib/weavestream/files)
       # - BACKUP_STORAGE_DIR=  # Scheduled database backup directory (default: /var/lib/weavestream/backup)
     volumes:
-      - "/containers/weavestream-worker/data/files:/var/lib/weavestream/files"
-      - "/containers/weavestream-worker/data/backup:/var/lib/weavestream/backup"
+      - "/containers/weavestream-worker/files:/var/lib/weavestream/files"
+      - "/containers/weavestream-worker/backup:/var/lib/weavestream/backup"
     # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
     restart: always
 ```
@@ -114,8 +114,8 @@ services:
         - COOKIE_SIGNING_KEY: !ENV '${COOKIE_SIGNING_KEY}'
         - CSRF_SIGNING_KEY: !ENV '${CSRF_SIGNING_KEY}'
     volumes:
-      - weavestream-worker_data_files: /var/lib/weavestream/files
-      - weavestream-worker_data_backup: /var/lib/weavestream/backup
+      - weavestream-worker_files: /var/lib/weavestream/files
+      - weavestream-worker_backup: /var/lib/weavestream/backup
   weavestream-postgres:
     name: weavestream_postgres
     options:
@@ -127,10 +127,10 @@ services:
       - from: ghcr.io/daemonless/redis:latest
       - template: !ENV '${PWD}/template.conf'
 volumes:
-  weavestream-worker_data_files:
-    device: '/containers/weavestream-worker/data/files'
-  weavestream-worker_data_backup:
-    device: '/containers/weavestream-worker/data/backup'
+  weavestream-worker_files:
+    device: '/containers/weavestream-worker/files'
+  weavestream-worker_backup:
+    device: '/containers/weavestream-worker/backup'
 ```
 
 **Makejail**:
@@ -177,8 +177,8 @@ services:
       - COOKIE_SIGNING_KEY=REPLACEME_32_BYTES_BASE64
       - CSRF_SIGNING_KEY=REPLACEME_32_BYTES_BASE64
     volumes:
-      - "/containers/weavestream-worker/data/files:/var/lib/weavestream/files"
-      - "/containers/weavestream-worker/data/backup:/var/lib/weavestream/backup"
+      - "/containers/weavestream-worker/files:/var/lib/weavestream/files"
+      - "/containers/weavestream-worker/backup:/var/lib/weavestream/backup"
 ```
 
 Save as `bastille-compose.yml`, then run `bastille up`.
