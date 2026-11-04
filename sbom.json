@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-04T15:25:37Z",
+  "generated": "2026-11-04T20:26:52Z",
   "image": "weavestream-worker",
   "tags": {
     "latest": {
-      "app_version": "1.11.1",
+      "app_version": "1.12.0",
       "arch": "amd64",
-      "generated": "2026-11-04T15:24:05Z",
+      "generated": "2026-11-04T20:25:22Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1210,7 +1210,7 @@
           {
             "name": "@codemirror/language",
             "purl": "",
-            "version": "6.12.4"
+            "version": "6.13.1"
           },
           {
             "name": "@codemirror/language-data",
@@ -1235,7 +1235,7 @@
           {
             "name": "@codemirror/state",
             "purl": "",
-            "version": "6.7.1"
+            "version": "6.7.6"
           },
           {
             "name": "@codemirror/streamparser",
@@ -1685,7 +1685,7 @@
           {
             "name": "@lezer/common",
             "purl": "",
-            "version": "1.5.3"
+            "version": "1.5.4"
           },
           {
             "name": "@lezer/cpp",
@@ -1730,7 +1730,7 @@
           {
             "name": "@lezer/lr",
             "purl": "",
-            "version": "1.4.10"
+            "version": "1.4.11"
           },
           {
             "name": "@lezer/markdown",
@@ -6523,7 +6523,7 @@
             "version": "6.19.0"
           },
           {
-            "name": "prisma-client-030b4c895e4db742e7ec2c4bd25481d6c51a43ad8fce988e4bc49b1ab04b4c7e",
+            "name": "prisma-client-12325d9bef48aee1e2a16019b2b8c17e5f123ae6c992e9ad89b3a1fa8beb6927",
             "purl": "",
             "version": "6.19.0"
           },
