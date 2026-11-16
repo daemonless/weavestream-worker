@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-08T08:49:15Z",
+  "generated": "2026-11-16T22:57:10Z",
   "image": "weavestream-worker",
   "tags": {
     "latest": {
-      "app_version": "1.13.1",
+      "app_version": "1.13.2",
       "arch": "amd64",
-      "generated": "2026-11-08T08:47:55Z",
+      "generated": "2026-11-16T22:56:04Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -440,7 +440,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.8.4"
+            "version": "2.9.2"
           },
           {
             "licenses": [
@@ -6523,7 +6523,7 @@
             "version": "6.19.0"
           },
           {
-            "name": "prisma-client-ae2fd1e878501f87688fd9d391236f6ab32612f018783fbb57b5fb2242cf025d",
+            "name": "prisma-client-c5deb7e6ec1f0ee96869b7a8b678329d6579b3262e6962dabef0f1aa320247ce",
             "purl": "",
             "version": "6.19.0"
           },
